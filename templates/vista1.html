@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="2">
+    <title>Vista 1 - Coordenadas</title>
+
+    <style>
+        #pagina {
+            margin: 0;
+            background-color: #fff0f7;
+            font-family: Arial, sans-serif;
+            color: #2b1020;
+        }
+
+        #encabezado {
+            background-color: #ff99cc;
+            text-align: center;
+            padding: 35px;
+            border-bottom: 5px solid #ff4fa3;
+        }
+
+        #titulo {
+            color: #cc0066;
+            font-size: 34px;
+            margin: 0;
+        }
+
+        #nombre {
+            color: white;
+            font-size: 19px;
+            margin-top: 12px;
+        }
+
+        #menu {
+            text-align: center;
+            background-color: #fff7fb;
+            padding: 18px;
+            border-bottom: 2px solid #ffb3d9;
+        }
+
+        #link_inicio, #link_vista1, #link_vista2 {
+            color: #cc0066;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 25px;
+            font-size: 17px;
+        }
+
+        #contenedor {
+            width: 80%;
+            margin: 35px auto;
+            background-color: white;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 0 18px rgba(255, 105, 180, 0.35);
+        }
+
+        #subtitulo {
+            color: #cc0066;
+            font-size: 28px;
+        }
+
+        #explicacion {
+            background-color: #fff5fa;
+            border-left: 7px solid #ff5cad;
+            padding: 18px;
+            border-radius: 18px;
+            font-size: 17px;
+        }
+
+        #panel {
+            margin-top: 30px;
+            text-align: center;
+            background-color: #fff5fa;
+            border-left: 7px solid #ff5cad;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        #valor_x {
+            display: inline-block;
+            width: 180px;
+            padding: 25px;
+            margin: 15px;
+            background-color: #ffe0f0;
+            border: 3px solid #ff75b9;
+            border-radius: 18px;
+            color: #cc0066;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #valor_y {
+            display: inline-block;
+            width: 180px;
+            padding: 25px;
+            margin: 15px;
+            background-color: #ffe0f0;
+            border: 3px solid #ff75b9;
+            border-radius: 18px;
+            color: #cc0066;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #origen {
+            margin-top: 20px;
+            color: #8a3d63;
+            font-weight: bold;
+        }
+
+        #pie {
+            text-align: center;
+            color: #8a3d63;
+            padding: 25px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body id="pagina">
+    <header id="encabezado">
+        <h1 id="titulo">Vista 1 - Panel de coordenadas</h1>
+        <h2 id="nombre">Melissa Rojas Oviedo</h2>
+    </header>
+
+    <nav id="menu">
+        <a id="link_inicio" href="{{ url_for('index') }}">Inicio</a>
+        <a id="link_vista1" href="{{ url_for('vista1') }}">Vista 1</a>
+        <a id="link_vista2" href="{{ url_for('vista2') }}">Vista 2</a>
+    </nav>
+
+    <main id="contenedor">
+        <h2 id="subtitulo">Lectura directa de datos</h2>
+
+        <p id="explicacion">
+            Esta vista presenta los valores X e Y como indicadores principales.
+            Es una forma simple de monitorear los datos antes de representarlos en una matriz.
+        </p>
+
+        <section id="panel">
+            <div id="valor_x">X = {{ "%.2f"|format(datoX) }}</div>
+            <div id="valor_y">Y = {{ "%.2f"|format(datoY) }}</div>
+        </section>
+    </main>
+
+</body>
+</html>

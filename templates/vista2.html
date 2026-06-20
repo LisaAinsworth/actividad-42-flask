@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="2">
+    <title>Vista 2 - Tablero</title>
+
+    <style>
+        #pagina {
+            margin: 0;
+            background-color: #fff0f7;
+            font-family: Arial, sans-serif;
+            color: #2b1020;
+        }
+
+        #encabezado {
+            background-color: #ff99cc;
+            text-align: center;
+            padding: 35px;
+            border-bottom: 5px solid #ff4fa3;
+        }
+
+        #titulo {
+            color: #cc0066;
+            font-size: 34px;
+            margin: 0;
+        }
+
+        #nombre {
+            color: white;
+            font-size: 19px;
+            margin-top: 12px;
+        }
+
+        #menu {
+            text-align: center;
+            background-color: #fff7fb;
+            padding: 18px;
+            border-bottom: 2px solid #ffb3d9;
+        }
+
+        #link_inicio, #link_vista1, #link_vista2 {
+            color: #cc0066;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 25px;
+            font-size: 17px;
+        }
+
+        #contenedor {
+            width: 80%;
+            margin: 35px auto;
+            background-color: white;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 0 18px rgba(255, 105, 180, 0.35);
+        }
+
+        #subtitulo {
+            color: #cc0066;
+            font-size: 28px;
+        }
+
+        #explicacion {
+            background-color: #fff5fa;
+            border-left: 7px solid #ff5cad;
+            padding: 18px;
+            border-radius: 18px;
+            font-size: 17px;
+        }
+
+        #tablero {
+            margin: 30px auto;
+            border-spacing: 8px;
+        }
+
+        #c00, #c01, #c02, #c03,
+        #c10, #c11, #c12, #c13,
+        #c20, #c21, #c22, #c23,
+        #c30, #c31, #c32, #c33 {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #fff5fa;
+            border: 2px solid #ffb3d9;
+            border-radius: 50%;
+        }
+
+        #c{{ ejeY }}0, #c{{ ejeY }}1, #c{{ ejeY }}2, #c{{ ejeY }}3 {
+            background-color: #ffd6eb;
+        }
+
+        #c0{{ ejeX }}, #c1{{ ejeX }}, #c2{{ ejeX }}, #c3{{ ejeX }} {
+            background-color: #ffc2e1;
+        }
+
+        #c{{ ejeY }}{{ ejeX }} {
+            background-color: #cc0066;
+            color: white;
+            border: 4px solid #ff99cc;
+            box-shadow: 0 0 14px rgba(204, 0, 102, 0.7);
+        }
+
+        #estado {
+            text-align: center;
+            color: #cc0066;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #estado_celda {
+			text-align: center;
+			color: #cc0066;
+			font-size: 20px;
+			font-weight: bold;
+		}
+    </style>
+    
+</head>
+
+<body id="pagina">
+    <header id="encabezado">
+        <h1 id="titulo">Vista 2 - Tablero de estado X-Y</h1>
+        <h2 id="nombre">Melissa Rojas Oviedo</h2>
+    </header>
+
+    <nav id="menu">
+        <a id="link_inicio" href="{{ url_for('index') }}">Inicio</a>
+        <a id="link_vista1" href="{{ url_for('vista1') }}">Vista 1</a>
+        <a id="link_vista2" href="{{ url_for('vista2') }}">Vista 2</a>
+    </nav>
+
+    <main id="contenedor">
+        <h2 id="subtitulo">Vista 2 - Matriz 4x4</h2>
+
+        <p id="explicacion">
+            Esta vista usa una segunda representación visual de los mismos datos X-Y.
+            El punto activo muestra la posición detectada dentro del tablero.
+        </p>
+
+        <table id="tablero">
+            {% for fila in range(4) %}
+            <tr id="fila{{ fila }}">
+                {% for columna in range(4) %}
+                <td id="c{{ fila }}{{ columna }}">{{ matriz[fila][columna] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p id="estado">Dato recibido: X={{ "%.2f"|format(datoX) }} / Y={{ "%.2f"|format(datoY) }}</p>
+        <p id="estado_celda">Celda activa: columna {{ ejeX }} / fila {{ ejeY }}</p>
+    </main>
+
+</body>
+</html>
