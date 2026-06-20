@@ -2,7 +2,7 @@
 
 ## Estudiante
 
-Melissa Rojas Oviedo
+Melissa R.
 
 ## Descripción del proyecto
 
@@ -24,8 +24,13 @@ Representar datos X-Y mediante una página web construida con Flask, cumpliendo 
 ## Vistas del proyecto
 
 - Inicio: matriz 4x4 con la posición X-Y marcada.
+<img width="1918" height="1023" alt="image" src="https://github.com/user-attachments/assets/5516a917-b1d2-404a-9c4d-0d3272893a36" />
+
 - Vista 1: panel de coordenadas X e Y.
-- Vista 2: tablero alternativo de estado X-Y.
+<img width="1918" height="1020" alt="image" src="https://github.com/user-attachments/assets/3348310f-7d16-4490-b6af-83f63c50a73f" />
+
+- Vista 2: tablero de estado X-Y.
+<img width="1918" height="990" alt="image" src="https://github.com/user-attachments/assets/3ab83578-61ec-4374-9248-1fe58ed85d89" />
 
 ## Tecnologías utilizadas
 
@@ -48,10 +53,12 @@ actividad_42/
     ├── index.html
     ├── vista1.html
     └── vista2.html
-    
+```
+
 ## Ejecución del proyecto
 
 Para ejecutar la aplicación, ingresar a la carpeta del proyecto:
 
-``bash
+```bash
 cd /home/melissa/actividad_42
+```
